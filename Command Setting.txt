@@ -1,0 +1,37 @@
+1. Set up Sublime command line tool: subs
+
+Website:
+http://olivierlacan.com/posts/launch-sublime-text-3-from-the-command-line/
+https://www.sublimetext.com/docs/2/osx_command_line.html
+
+Steps:
+(1)ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+The /usr/local/bin is in the load path by default on OS X, so it's a much better place to symlink (create a symbolic link — or shortcut) that will allow you to run the subl utility from your Terminal app.
+
+
+2. Changed Sublime command to run both javac and java
+
+Website:
+http://www.quora.com/How-do-you-compile-and-run-Java-in-Sublime-Text-2
+
+Steps:
+(1) Preferences -> Browse Packages -> Java Folder -> JavaC.sublime-build
+(2) Added this:
+"cmd": ["java", "$file_base_name"],
+
+
+3. Set up cs61b library:
+
+Website: 
+http://berkeley-cs61b.github.io/public_html/materials/lab/lab1c/lab1c.html#c-eclipse-setup
+
+Steps:
+(1)back to home directory
+(2)subl .bashrc 
+added the following two lines:
+export CS61B_LIB_DIR="/Users/keyulai/Documents/cs61b/lib/*"
+export CLASSPATH="$CLASSPATH:$CS61B_LIB_DIR:./"
+(3)subl .bash_profile
+added the exact two same lines
+
+
